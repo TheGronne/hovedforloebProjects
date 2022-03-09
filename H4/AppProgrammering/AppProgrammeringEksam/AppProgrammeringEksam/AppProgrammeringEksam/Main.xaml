@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProgrammeringEksam.Main"
+             BackgroundColor="SaddleBrown">
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label TextColor="LawnGreen" Text="{Binding level}" FontSize="30"/>
+            <ImageButton Source="{Binding SquareImage}" BackgroundColor="{Binding SquareColour}" WidthRequest="135" HeightRequest="135" HorizontalOptions="Center" Clicked="Tapped"/>
+            <ProgressBar Grid.Row="0" Grid.Column="0" WidthRequest="135" HorizontalOptions="Center" ProgressColor="Red" HeightRequest="4" BackgroundColor="DimGray" Progress="{Binding HP}" FlowDirection="LeftToRight"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.Row="0" TextColor="Red" Grid.Column="0" Text="{Binding Damage}" FontSize="30"/>
+                <Label Grid.Row="1" TextColor="LightBlue" Grid.Column="0" Text="{Binding CritChance}" FontSize="30"/>
+                <Label Grid.Row="2" TextColor="Blue" Grid.Column="0" Text="{Binding CritDamage}" FontSize="30"/>
+                <Label Grid.Row="3" TextColor="Gold" Grid.Column="0" Text="{Binding GoldMultiplier}" FontSize="30"/>
+                <Label Grid.Row="4" TextColor="DarkGoldenrod" Grid.Column="0" Text="{Binding GoldChance}" FontSize="30"/>
+            </Grid>
+            <Label Grid.Row="3" TextColor="Gold" Grid.Column="0" Text="{Binding Gold}" FontSize="30"/>
+            <Button Text="Prestige" Clicked="Prestige"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

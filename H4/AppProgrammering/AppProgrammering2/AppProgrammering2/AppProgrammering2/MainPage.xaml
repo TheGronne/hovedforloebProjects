@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProgrammering2.MainPage">
+    <ContentPage>
+        <ScrollView>
+            <StackLayout>
+                <Rectangle BackgroundColor="{Binding colour}" HeightRequest="150" WidthRequest="150"/>
+                <Switch IsEnabled="{Binding switchEnable}" PropertyChanged="Switch_PropertyChanged"/>
+                <Entry Text="{Binding entryText, FallbackValue=foo}"/>
+                <Label Text="{Binding labelText, FallbackValue=bar}"/>
+                <ImageButton Source="button.png" Clicked="ImageButton_Clicked"/>
+                <BoxView BackgroundColor="Purple" HeightRequest="60" HorizontalOptions="Center" WidthRequest="{Binding width}"/>
+                <Button Text="Upgrade width" Clicked="Button_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+    <ContentPage>
+        <Label Text="Hello"/>
+    </ContentPage>
+</TabbedPage>

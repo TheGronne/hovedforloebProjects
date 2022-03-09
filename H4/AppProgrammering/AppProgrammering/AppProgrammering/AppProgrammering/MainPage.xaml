@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProgrammering.MainPage">
+
+    <StackLayout BackgroundColor="{Binding colour}">
+        <Label Text="{Binding test}"/>
+        <Button Text="I am button!"
+                Clicked="Button_Clicked"></Button>
+        <Label Text="{Binding test1}"/>
+        <Button Text="I am button too!"
+                Clicked="Button_Clicked_1"></Button>
+        <Label Text="{Binding counter}"/>
+        <Button Text="I am button counter!"
+                Clicked="Button_Clicked_2"></Button>
+        <Label Text="{Binding changeBackground}"/>
+        <Button Text="I am button colour changer!"
+                Clicked="Button_Clicked_3"
+                BackgroundColor="{Binding colour2}"
+                TextColor="{Binding buttonTextColour}"></Button>
+        <Image Source="invis.jpeg"
+               Opacity="{Binding imageOpacity}"/>
+        <Slider Minimum="0" Maximum="100"
+                Value="{Binding sliderValue}"
+                ValueChanged="Slider_ValueChanged"/>
+    </StackLayout>
+</ContentPage>

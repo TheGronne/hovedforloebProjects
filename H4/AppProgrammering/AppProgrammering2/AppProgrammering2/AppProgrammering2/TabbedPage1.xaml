@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProgrammering2.TabbedPage1"
+            xmlns:local="clr-namespace:AppProgrammering2">
+  <!--Pages can be added as references or inline-->
+    <local:MainPage Title="Main Page"/>
+    <local:ListViewPage Title="Listview"/>
+    <local:Page1 Title="Navigation"/>
+    <local:Essentials Title="Essentials"/>
+</TabbedPage>

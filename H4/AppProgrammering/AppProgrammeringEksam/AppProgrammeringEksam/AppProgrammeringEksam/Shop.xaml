@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProgrammeringEksam.Shop"
+             BackgroundColor="DarkSlateGray">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding itemsource}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="50">
+                            <ViewCell.View Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="Gold" FontSize="Medium" Text="Costs:"/>
+                                    <Label TextColor="Gold" FontSize="Medium" Text="{Binding cost}"/>
+                                    <Label TextColor="Purple" FontSize="Medium" Text="Rarity:"/>
+                                    <Label TextColor="Purple" FontSize="Medium" Text="{Binding rarity}"/>
+                                    <Label TextColor="White" FontSize="Medium" Text="Description:"/>
+                                    <Label TextColor="White" FontSize="Medium" Text="{Binding description}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="{Binding ShopGold}" TextColor="Gold" FontSize="20"/>
+            <Button Text="Buy item" Clicked="BuyItem"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <body onload="Run()">
+        <button>Login</button>
+        <button>Sign Up</button>
+        <h1>Home</h1>
+        <table class="table">
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Position</th>
+              <th>Delete</th>
+            </tr>
+
+          </table>
+    </body>
+</html>
+
+<script type="text/javascript">
+function Run(){
+    fetch('http://127.0.0.1:8080/', {
+        body: (new URLSearchParams()).toString(),
+        mode: 'cors',
+        headers: {'content-type': 'application/x-www-form-urlencoded'},
+        method: 'post'
+    }).then(function(res){
+        console.log(res);
+        return res.text()
+    }).then(function(data){
+        parsedjson = JSON.parse(data);
+        console.log(parsedjson[0]);
+        let tableRef = document.getElementById("table").insertRow(-1);
+        for(var i = 0; i < Object.keys(parsedjson) + 1; i++){
+            
+            var newCell = tableRef.insertCell(0);
+            newCell =
+            `
+                <th>${parsedjson[i].name}</th>
+                <th>${parsedjson[i].age}</th>
+                <th>${parsedjson[i].position}</th>
+                <button onclick="Delete(${i})">Delete</button>
+            `;
+            console.log(cell);
+        }
+    })
+}
+
+function Delete(ID){
+    id = 0;
+    console.log(ID);
+    fetch('http://127.0.0.1:8080/id', {
+        body: (new URLSearchParams({id: ID, myvalue: "myvalue value"})).toString(),
+        mode: 'cors',
+        headers: {'content-type': 'application/x-www-form-urlencoded'},
+        method: 'post'
+    }).then(function(res){
+        console.log(res);
+        return res.text()
+    }).then(function(data){
+        parsedjson = JSON.parse(data);
+        console.log(parsedjson[0].id);
+        parsedID = parsedjson[0].id;
+        document.getElementById(parsedID).remove();
+    })
+}
+</script>
