@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Graf
-{
+{ 
     public class Graph
     {
         public List<Node> nodes = new List<Node>();
